@@ -40,18 +40,20 @@
 直近ではAWSサービスのイベント内容を取得してSlackに通知する、簡易なサーバーレスアプリケーションの設計と構築という課題に取り組んでいます
 
 **使用技術:** AWS [EC2, SES, SNS, **Lambda**, **chalice**], **Slack API**, docker, Rails
+
 **設計概要:** EC2上のフォームからSESでメールを送信、送信イベントをSNSに転送、SNSでLambdaをキック、Lambda(python)でイベント内容をSlack APIのJSONフォーマットに整形してHTTPリクエストを生成、Slackに通知
+
 **関連:**
-[AWS Chaliceの開発環境をdockerで構築し、超高速でサーバーレスアプリケーションをデプロイしてみた - Qiita](https://qiita.com/naokit-dev/items/3840ed216221a2c49379)
-[[Rails6対応, 公式SDK] AWS SESを使ってRailsから送信元が独自ドメインのメールを送ってみた - Qiita](https://qiita.com/naokit-dev/items/4668ec379fbe6dcb45cd)
+- [AWS Chaliceの開発環境をdockerで構築し、超高速でサーバーレスアプリケーションをデプロイしてみた - Qiita](https://qiita.com/naokit-dev/items/3840ed216221a2c49379)
+- [[Rails6対応, 公式SDK] AWS SESを使ってRailsから送信元が独自ドメインのメールを送ってみた - Qiita](https://qiita.com/naokit-dev/items/4668ec379fbe6dcb45cd)
 
 **Interest:** Lambda, CodeDeploy(CI/CD), CloudFormation(IaC)
 
 ### その他
 
-2020/09/15 [AWS ALBにWAFを設定して海外からのアクセスを遮断してみる - Qiita](https://qiita.com/naokit-dev/items/c0c1931e0bfd891a9a1b)
-2020/08/18 [HTTP -> HTTPSのリダイレクトはELBで行う方がスマートかもしれない　(Nginxでリダイレクトを行う方法あり) - Qiita](https://qiita.com/naokit-dev/items/c62bdf1d1656c4dba091)
-2020/07/03 [EC2、RDSを利用してRailsアプリをデプロイする [NGINX + puma + PostgreSQL + Rails 6] - Qiita](https://qiita.com/naokit-dev/items/808744a371a7154318ad)
+- 2020/09/15 [AWS ALBにWAFを設定して海外からのアクセスを遮断してみる - Qiita](https://qiita.com/naokit-dev/items/c0c1931e0bfd891a9a1b)
+- 2020/08/18 [HTTP -> HTTPSのリダイレクトはELBで行う方がスマートかもしれない　(Nginxでリダイレクトを行う方法あり) - Qiita](https://qiita.com/naokit-dev/items/c62bdf1d1656c4dba091)
+- 2020/07/03 [EC2、RDSを利用してRailsアプリをデプロイする [NGINX + puma + PostgreSQL + Rails 6] - Qiita](https://qiita.com/naokit-dev/items/808744a371a7154318ad)
 
 ## Docker
 
@@ -63,21 +65,25 @@
 
 ### その他:
 
-2020/09/28 [とりあえずのdocker-compose upから入って、Web server(Nginx)の基礎設計を学びながら、Dockerを学ぶ① - Qiita](https://qiita.com/naokit-dev/items/a9a44310a055aa50ccff)
-2020/09/05 [”Docker Compose、チョットわかる”になるために知っておきたい頻出オプション - Compose file version 3(3.8) reference - - Qiita](https://qiita.com/naokit-dev/items/26b6a542571639e975ee)
-2020/08/06 [DockerでRailsチュートリアルのローカル開発環境構築（Rails 6 + PostgreSQL + Webpack) - Qiita](https://qiita.com/naokit-dev/items/99225bf3d8665ecfdec2)
+- 2020/09/28 [とりあえずのdocker-compose upから入って、Web server(Nginx)の基礎設計を学びながら、Dockerを学ぶ① - Qiita](https://qiita.com/naokit-dev/items/a9a44310a055aa50ccff)
+- 2020/09/05 [”Docker Compose、チョットわかる”になるために知っておきたい頻出オプション - Compose file version 3(3.8) reference - - Qiita](https://qiita.com/naokit-dev/items/26b6a542571639e975ee)
+- 2020/08/06 [DockerでRailsチュートリアルのローカル開発環境構築（Rails 6 + PostgreSQL + Webpack) - Qiita](https://qiita.com/naokit-dev/items/99225bf3d8665ecfdec2)
 
 ##  Rails - オンラインマークダウンエディタの個人開発
 
 **Motivation:**
-プログラミング初学者が、Twitter 上でスクリーンショットを使ってコードを共有しているのを見て考案
-見る側、見せる側にとって、もっと効果的な方法を検討した結果、共有用 URL を生成可能なオンライン markdown エディタの制作、公開に至りました（2020.7月）
+
+プログラミング初学者が、Twitter 上でスクリーンショットを使ってコードを共有しているのを見て考案。
+見る側、見せる側にとって、もっと効果的な方法を検討した結果、共有用 URL を生成可能なオンライン Markdown エディタの制作、公開に至りました（2020.7月）
 
 **Source:** [naokit-dev/myapp](https://github.com/naokit-dev/myapp)
+
 **URL:** [New Article | mdClip - Fun with Code](https://mdclip.xyz/)
 
 **使用技術:** AWS(EC2, RDS), CircleCI(CI), Capistrano(CD), Docker, Ruby on Rails 6
+
 **機能要件:** リアルタイムプレビューが可能な markdown エディタ / 多言語対応のシンタックスハイライト / ログイン不要で記事の作成が可能 / 生成した記事は固有の URL を割り当て共有可能 / シェアボタンで Twitter に URL を投稿 / URL 削除用の記事固有パスワードを自動生成
+
 **非機能要件:** SSL 対応 / *CI/CDを導入し、**自動テストおよび開発段階からデプロイとほぼ同じ環境での動作検証が可能であること**
 
 # エンジニアを志す以前の背景(〜2020.4月)
