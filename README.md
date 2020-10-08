@@ -71,9 +71,7 @@
 
 ##  Rails - オンラインマークダウンエディタの個人開発
 
-**Motivation:**
-
-プログラミング初学者が、Twitter 上でスクリーンショットを使ってコードを共有しているのを見て考案。
+**Motivation:** プログラミング初学者が、Twitter 上でスクリーンショットを使ってコードを共有しているのを見て考案。
 見る側、見せる側にとって、もっと効果的な方法を検討した結果、共有用 URL を生成可能なオンライン Markdown エディタの制作、公開に至りました（2020.7月）
 
 **Source:** [naokit-dev/myapp](https://github.com/naokit-dev/myapp)
