@@ -39,7 +39,7 @@
 
 直近ではAWSサービスのイベント内容を取得してSlackに通知する、簡易なサーバーレスアプリケーションの設計と構築という課題に取り組んでいます
 
-**使用技術:** AWS [EC2, SES, SNS, **Lambda**, **chalice**], **Slack API**, docker, Rails
+**使用技術:** AWS [EC2, SES, SNS, **Lambda**, **Chalice**], **Slack API**, Docker, Rails
 
 **設計概要:** EC2上のフォームからSESでメールを送信、送信イベントをSNSに転送、SNSでLambdaをキック、Lambda(python)でイベント内容をSlack APIのJSONフォーマットに整形してHTTPリクエストを生成、Slackに通知
 
